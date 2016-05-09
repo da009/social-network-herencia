@@ -85,7 +85,7 @@ public class MessagePost
             for(int cont=0; cont<comments.size(); cont++)
                 System.out.println(cont+1 + " " + comments.get(cont));
         }
-        System.out.println("Sent: " + timeString(System.currentTimeMillis()) + " ago.");
+        System.out.println("Sent: " + timeString(System.currentTimeMillis()) + " ago. \n");
     }
 
     /**
