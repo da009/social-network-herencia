@@ -25,12 +25,18 @@ public class MessagePost
         likes = 0;
         comments = new ArrayList<>();
     }
-
+    
+    /**
+     * Adds a like to the cont of likes
+     */
     public void like()
     {
         likes++;
     }
-
+    
+    /**
+     * Remove a like to the cont of likes
+     */
     public void unLike()
     {
         if (likes<0)
@@ -39,26 +45,37 @@ public class MessagePost
             likes--;
     }
 
+    /**
+     * Add a comment to the post
+     */
     public void addComment(String text)
     {
         comments.add(text);
     }
 
+    /**
+     * Return the message
+     */
     public String getText()
     {
         return message;
     }
 
+    /**
+     * Retrun the time to the post publising
+     */
     public long getTimeStamp()
     {
         return timestamp;
     }
 
+    /**
+     * Print for screen the post whit his information
+     */
     public void display()
     {
         System.out.println("User: " + username);
         System.out.println("Message: " + message);
-        System.out.println("Sent: " + timeString(System.currentTimeMillis()) + " ago.");
         System.out.println("Likes: " + likes);
         if(comments.size()==0)
             System.out.println("There are not comments.");
@@ -68,8 +85,12 @@ public class MessagePost
             for(int cont=0; cont<comments.size(); cont++)
                 System.out.println(cont+1 + " " + comments.get(cont));
         }
+        System.out.println("Sent: " + timeString(System.currentTimeMillis()) + " ago.");
     }
 
+    /**
+     * Return a String whit the text of time ago for the message publising
+     */
     public String timeString(long time)
     {
         long seconds = (time-timestamp)/1000; 
