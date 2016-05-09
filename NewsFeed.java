@@ -23,16 +23,22 @@ public class NewsFeed
 
     public void addMessagePost(MessagePost message)
     {
-
+        messages.add(message);
     }
 
     public void addPhotoPost(PhotoPost photo)
     {
-
+        photos.add(photo);
     }
 
     public void show()
     {
-
+        // Show the text posts
+        for(MessagePost message : messages)
+            message.display();
+        
+        // Show the image posts
+        for(PhotoPost photo : photos)
+            photo.display(); 
     }
 }
