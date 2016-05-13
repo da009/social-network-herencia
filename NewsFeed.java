@@ -45,7 +45,10 @@ public class NewsFeed
      */
     public void show(){
         for(MessagePost message : messages)
+        {
             message.display();
+            message.printShortSumary();
+        }
         for(PhotoPost photo : photos)
             photo.display();
     }

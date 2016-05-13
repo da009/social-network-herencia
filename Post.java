@@ -17,9 +17,18 @@ public class Post
      */
     public Post(String author)
     {
-       this.timestamp = System.currentTimeMillis();
+       this.username = author;
+        this.timestamp = System.currentTimeMillis();
        likes = 0;
        comments = new ArrayList<>();
+    }
+    
+    /**
+     * returns the username for this post
+     */
+    public String getUsername()
+    {
+        return username;
     }
 
     /**
@@ -77,7 +86,7 @@ public class Post
             for(int i=0; i<comments.size(); i++)
                 info += comments.get(i) + "\n_____________________\n";
         else
-            info += "Sin comentarios";
+            info += "Sin comentarios" + "\n#####################\n";
         System.out.println(info);
     }
 }
