@@ -33,6 +33,6 @@ public class MessagePost extends Post
      */
     public void printShortSumary()
     {
-        System.out.println("This it's a message-post writed by: " + getUsername());
+        System.out.println("This it's a message-post written by: " + getUsername());
     }
 }
