@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 /**
  * Write a description of class Post here.
  * 
@@ -10,7 +10,6 @@ public class Post
     private String username;
     private long timestamp;
     private int likes;
-    private ArrayList<String> comments;
 
     /**
      * Constructor for objects of class Post
@@ -18,9 +17,8 @@ public class Post
     public Post(String author)
     {
        this.username = author;
-        this.timestamp = System.currentTimeMillis();
+       this.timestamp = System.currentTimeMillis();
        likes = 0;
-       comments = new ArrayList<>();
     }
     
     /**
@@ -47,10 +45,11 @@ public class Post
     }
     
     /**
-     * Metodo para añadir un comentario al post
+     * return the number of likes as int
      */
-    public void addComment(String text){
-        comments.add(text);
+    public int getLikes()
+    {
+        return likes;
     }
     
     /**
@@ -63,7 +62,7 @@ public class Post
     /**
      * Metodo para pasar el tiempo a minutos y segundos.
      */
-    private String timeString(long time){
+    public String timeString(long time){
         String info = "";
         int sec =  (int)(time / 1000) % 60;
         int min =  (int)((time / (1000*60)) % 60);
@@ -82,11 +81,6 @@ public class Post
         info += username + "\n=====================\n" + "Posted: ";
         info += timeString(time);
         info += "_____________________\nLikes: " + likes + "\n=====================\n\n";
-        if(comments.size() != 0)
-            for(int i=0; i<comments.size(); i++)
-                info += comments.get(i) + "\n_____________________\n";
-        else
-            info += "Sin comentarios" + "\n#####################\n";
         System.out.println(info);
     }
 }

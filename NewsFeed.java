@@ -22,8 +22,6 @@ public class NewsFeed
 
     /**
      * Add a post with a message
-     * 
-     * @message the message to introduce
      */
     public void addMessagePost(MessagePost message)
     {
@@ -32,8 +30,6 @@ public class NewsFeed
 
     /**
      * Add a post with a image
-     * 
-     * @message the image to introduce
      */
     public void addPhotoPost(PhotoPost photo)
     {
